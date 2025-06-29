@@ -28,7 +28,7 @@ const Hero = () => (
         Hey, I'm Dilshad
       </motion.h1>
       <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">
-        Frontend Developer • React Specialist • UI Enthusiast
+        Frontend Developer | React Specialist | UI Enthusiast
       </p>
       <a
         href="#projects"
@@ -41,6 +41,7 @@ const Hero = () => (
         href="/dev_resume.pdf"
         target="_blank"
         className="px-5 py-2 bg-blue-600 hover:bg-blue-700 rounded-full text-white text-sm"
+        download
       >
         View My Resume
       </a>
