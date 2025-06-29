@@ -1,14 +1,41 @@
 const skills = [
   { name: "JavaScript", icon: "/icons/javascript.svg" },
-  { name: "React", icon: "/icons/react.svg" },
-  { name: "Redux", icon: "/icons/redux.svg" },
-  { name: "Next Js", icon: "/icons/nextjs.svg" },
-  { name: "HTML", icon: "/icons/html.svg" },
-  { name: "CSS", icon: "/icons/css.svg" },
-  { name: "Tailwind", icon: "/icons/tailwind.svg" },
-  { name: "Vite", icon: "/icons/vite.svg" },
-  { name: "Git", icon: "/icons/git.svg" },
-  { name: "GitHub", icon: "/icons/github.svg" },
+  {
+    name: "React",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+  },
+  {
+    name: "Redux",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg",
+  },
+  {
+    name: "Next Js",
+    icon: "/icons/nextjs.svg",
+  },
+  {
+    name: "HTML",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
+  },
+  {
+    name: "CSS",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
+  },
+  {
+    name: "Tailwind",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original-wordmark.svg",
+  },
+  {
+    name: "Vite",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/iconsvitejs/vitejs-original.svg",
+  },
+  {
+    name: "Git",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
+  },
+  {
+    name: "GitHub",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
+  },
 ];
 
 const Skills = () => (
