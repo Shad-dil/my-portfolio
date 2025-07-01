@@ -4,7 +4,7 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState({});
   const handleSubmit = () => {
-    if (!email || email.length === 0) error.email = "Please Enter email";
+    if (!email || email.length === 0) setError({ email: "Please Enter email" });
     console.log("submittedd");
   };
   return (
@@ -47,13 +47,14 @@ const Contact = () => {
             placeholder="Enter your Email id ..."
             className="py-2 px-2 w-[500px] text-left text-gray-700 rounded-md "
           />
-          <span>{error.email}</span>
           <button
             className="px-2 py-2 mx-3 bg-gray-700 rounded-md"
             onClick={handleSubmit}
           >
             Submit
           </button>
+          <br />
+          <span className="text-red-500">{error.email}</span>
         </div>
       </div>
       <div className="flex justify-center items-center my-4">

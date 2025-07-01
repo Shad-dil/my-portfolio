@@ -26,7 +26,7 @@ const skills = [
   },
   {
     name: "Vite",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/iconsvitejs/vitejs-original.svg",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg",
   },
   {
     name: "Git",
