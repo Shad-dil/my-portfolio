@@ -8,10 +8,9 @@ const About = () => (
       />
       <h2 className="text-3xl font-semibold">About Me</h2>
       <p className="text-gray-700 dark:text-gray-400 max-w-3xl text-center">
-        I'm a frontend developer with ~3 years of experience building
-        performant, accessible web interfaces using React, Redux, and Tailwind
-        CSS. I'm passionate about creating elegant, responsive UIs and love
-        minimal, functional design.
+        “I’m a frontend developer with 3 years’ experience crafting scalable
+        interfaces in React and Next.js. I enjoy working with design systems,
+        clean UI, and optimizing performance.”
       </p>
     </div>
   </section>

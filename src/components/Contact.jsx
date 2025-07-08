@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { CgMail } from "react-icons/cg";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Contact = () => {
   const [email, setEmail] = useState("");
@@ -18,23 +20,23 @@ const Contact = () => {
         <div>
           <a
             href="mailto:hellodilshad3@gmail.com"
-            className="block hover:text-blue-500 dark:hover:text-blue-400"
+            className="flex hover:text-blue-500 dark:hover:text-blue-400 gap-1"
           >
-            hellodilshad3@gmail.com
+            <CgMail className="mt-1" /> hellodilshad3@gmail.com
           </a>
           <a
             href="https://www.linkedin.com/in/shad-dil/"
             target="_blank"
-            className="block hover:text-blue-500 dark:hover:text-blue-400"
+            className="flex hover:text-blue-500 dark:hover:text-blue-400 gap-1"
           >
-            LinkedIn
+            <FaLinkedin className="mt-1" /> LinkedIn
           </a>
           <a
             href="https://github.com/Shad-dil"
             target="_blank"
-            className="block hover:text-blue-500 dark:hover:text-blue-400"
+            className=" hover:text-blue-500 dark:hover:text-blue-400 flex gap-1"
           >
-            GitHub
+            <FaGithub className="mt-1" /> GitHub
           </a>
         </div>
         <div>
