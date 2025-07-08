@@ -21,7 +21,7 @@ const projects = [
     Livelink: "https://klimate-app-shad.vercel.app/",
     screenshot: "/klimate.png",
     tech: [
-      "JavaScript",
+      "TypeScript",
       "React Js",
       "ShadCN UI",
       "OpenWeatherMap API",
@@ -34,7 +34,7 @@ const projects = [
     Githublink: "https://github.com/Shad-dil/reflct",
     Livelink: "https://reflct-pi.vercel.app/",
     screenshot: "/reflect.png",
-    tech: ["React", "Context API", "Tailwind CSS"],
+    tech: ["Javascript", "Next Js", "Tailwind CSS", "Clerk Api", "Prisma"],
   },
 ];
 
