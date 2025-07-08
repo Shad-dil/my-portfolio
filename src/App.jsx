@@ -14,7 +14,7 @@ function App() {
     Aos.init({ duration: 800, once: true });
   }, []);
   return (
-    <div className="font-sans text-gray-900 dark:text-gray-100 bg-white dark:bg-[#0f0f11]">
+    <div className="font-sans text-textPrimary dark:text-gray-100 bg-white dark:bg-background">
       <Navbar />
       <Hero />
       <About />

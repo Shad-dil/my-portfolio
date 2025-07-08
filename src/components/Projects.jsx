@@ -1,24 +1,47 @@
 const projects = [
   {
-    title: "FastPizza – React + Redux App",
-    desc: "A dynamic pizza ordering app using React, Redux Toolkit, and Tailwind — with real-time cart updates and smooth navigation.",
+    title: "FastReact Pizza Co. – Pizza Ordering App",
+    desc: "A sleek and responsive pizza ordering web app built with React, Redux Toolkit, Tailwind CSS, and React Router. Users can browse a dynamic menu, customize orders, and track them in real time. The app features efficient state management with Redux, priority ordering logic, and a clean UI that enhances the user experience. Ideal for showcasing practical frontend skills and modern development practices.",
     Githublink: "https://github.com/Shad-dil/fastReactPizzaCo",
     Livelink: "https://fast-react-pizza-coo.vercel.app/",
-    screenshot: "/pizzass.png", // Add your screenshot path here
+    screenshot: "/pizzass.png",
+    tech: [
+      "JavaScript",
+      "React",
+      "Redux Toolkit",
+      "Tailwind CSS",
+      "Shadcn-ui",
+      "Vercel",
+    ],
   },
   {
-    title: "Mini E-commerce",
-    desc: "Simple ecommerce app with product listings, filters, and cart using React.",
-    Githublink: "https://github.com/Shad-dil/fastReactPizzaCo",
-    Livelink: "https://fast-react-pizza-coo.vercel.app/",
-    screenshot: "/screenshots/miniecommerce.png", // Add your screenshot path here
+    title: "Klimate – Weather Forecast App",
+    desc: "Klimate is a sleek and responsive weather forecast web app that provides real-time weather data for any location. Built using Next.js, Tailwind CSS, and ShadCN UI, it leverages the OpenWeatherMap API to display temperature, weather conditions, humidity, and wind speed in a clean and modern UI. The app includes theme switching (light/dark mode) and intuitive user interaction.",
+    Githublink: "https://github.com/Shad-dil/Klimate-app",
+    Livelink: "https://klimate-app-shad.vercel.app/",
+    screenshot: "/klimate.png",
+    tech: [
+      "JavaScript",
+      "React Js",
+      "ShadCN UI",
+      "OpenWeatherMap API",
+      "Tailwind CSS",
+    ],
+  },
+  {
+    title: "Reflct – Minimal Blog & Reflection Journal",
+    desc: "Reflct is a minimalistic personal blogging and journaling platform designed for writing reflections and ideas. Built with Next.js, Tailwind CSS, and ShadCN UI, it offers a clean, distraction-free interface for expressive writing, with support for theme switching and responsive design.",
+    Githublink: "https://github.com/Shad-dil/reflct",
+    Livelink: "https://reflct-pi.vercel.app/",
+    screenshot: "/reflect.png",
+    tech: ["React", "Context API", "Tailwind CSS"],
   },
 ];
 
 const Projects = () => (
   <section className="px-8 py-16 bg-white dark:bg-[#0f0f11]" id="projects">
     <h2 className="text-3xl font-semibold mb-6">Projects</h2>
-    <div className="grid md:grid-cols-2 gap-6">
+    <div className="grid md:grid-cols-3 gap-6">
       {projects.map((project, idx) => (
         <div
           key={idx}
@@ -45,6 +68,17 @@ const Projects = () => (
           <p className="text-gray-600 dark:text-gray-400 mb-3 text-sm">
             {project.desc}
           </p>
+          <div className="flex flex-wrap gap-2 mb-3">
+            {project.tech?.map((tech, i) => (
+              <span
+                key={i}
+                className="text-xs px-3 py-1 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 border border-gray-300 dark:border-gray-600"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+
           <div className="flex justify-between">
             <a
               href={project.Livelink}
