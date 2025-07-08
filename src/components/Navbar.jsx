@@ -55,12 +55,12 @@ const Navbar = () => {
         >
           Contact
         </a>
-        <button
+        {/* <button
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
           className="ml-4"
         >
           {theme === "dark" ? "☀️" : "🌙"}
-        </button>
+        </button> */}
       </nav>
       {/* Mobile menu button */}
       <button
