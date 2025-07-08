@@ -101,15 +101,6 @@ const Navbar = () => {
           >
             Contact
           </a>
-          <button
-            onClick={() => {
-              setTheme(theme === "dark" ? "light" : "dark");
-              setMenuOpen(false);
-            }}
-            className="mt-2"
-          >
-            {theme === "dark" ? "☀️" : "🌙"}
-          </button>
         </div>
       )}
     </header>
