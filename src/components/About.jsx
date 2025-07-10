@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 const About = () => (
   <section className="px-8 py-16 bg-white dark:bg-[#0f0f11]" id="about">
     <div className="flex flex-col items-center mb-6">
@@ -18,6 +19,32 @@ const About = () => (
         interfaces in React and Next.js. I enjoy working with design systems,
         clean UI, and optimizing performance.”
       </p>
+      <div className="flex flex-wrap justify-center gap-3 mt-6">
+        <motion.span
+          whileHover={{ scale: 1.1 }}
+          className="px-4 py-1 bg-blue-600 text-white text-sm rounded-full shadow-md"
+        >
+          Java Script
+        </motion.span>
+        <motion.span
+          whileHover={{ scale: 1.1 }}
+          className="px-4 py-1 bg-purple-600 text-white text-sm rounded-full shadow-md"
+        >
+          React.Js
+        </motion.span>
+        <motion.span
+          whileHover={{ scale: 1.1 }}
+          className="px-4 py-1 bg-teal-600 text-white text-sm rounded-full shadow-md"
+        >
+          Next.Js
+        </motion.span>
+        <motion.span
+          whileHover={{ scale: 1.1 }}
+          className="px-4 py-1 bg-gray-700 text-white text-sm rounded-full shadow-md"
+        >
+          Redux-Toolkit
+        </motion.span>
+      </div>
     </div>
   </section>
 );
