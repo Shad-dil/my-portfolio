@@ -23,6 +23,7 @@ const projects = [
     tech: [
       "TypeScript",
       "React Js",
+      "Redux",
       "ShadCN UI",
       "OpenWeatherMap API",
       "Tailwind CSS",

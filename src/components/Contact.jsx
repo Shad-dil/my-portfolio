@@ -59,8 +59,8 @@ const Contact = () => {
         <br />
         <span className="text-red-500">{error.email}</span>
       </div>
-      <div className="flex justify-center items-center my-4">
-        <p>Made with 💗</p>
+      <div className="flex justify-center items-center mt-4">
+        © 2025 Dilshad.dev — Built with React.js & Tailwind CSS
       </div>
     </section>
   );
