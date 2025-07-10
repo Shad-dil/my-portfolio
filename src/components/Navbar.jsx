@@ -18,7 +18,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="flex justify-between items-center px-8 py-5 bg-white dark:bg-[#0f0f11] border-b border-gray-200 dark:border-gray-800 sticky top-0 z-50">
+    <header className="flex justify-between items-center px-8 py-5 bg-white dark:bg-[#0f0f11] border-b border-gray-200 dark:border-gray-800 fixed w-full  top-0 z-50">
       <h1 className="text-2xl font-bold tracking-tight text-blue-600 dark:text-blue-400">
         <a
           href="/"

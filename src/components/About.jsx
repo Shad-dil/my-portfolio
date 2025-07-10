@@ -3,7 +3,7 @@ const About = () => (
   <section className="px-8 py-16 bg-white dark:bg-[#0f0f11]" id="about">
     <div className="flex flex-col items-center mb-6">
       <div className="flex justify-center mb-6">
-        <div className="relative w-40 h-40 rounded-full p-[6px] bg-gradient-to-tr from-blue-500 via-purple-500 to-pink-500 animate-gradient-spin">
+        <div className="relative w-40 h-40 rounded-full p-[6px] bg-gradient-to-tr from-blue-500 via-purple-500 to-pink-500 animate-gradient-spin  hover:scale-105 transition-transform duration-300 ease-in-out">
           <div className="rounded-full overflow-hidden w-full h-full bg-dark shadow-inner">
             <img
               src="/Profile.jpg"

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 const Hero = () => (
-  <section className="relative min-h-screen flex items-center justify-center text-center px-4 bg-gradient-to-b from-white dark:from-[#0f0f11] to-gray-100 dark:to-[#141417] overflow-hidden">
+  <section className="relative min-h-screen flex items-center justify-center text-center px-4 bg-gradient-to-b from-white dark:from-[#0f0f11] to-gray-100 dark:to-[#141417] overflow-x-hidden">
     {/* Background image */}
     <div
       className="absolute inset-0 w-full h-full bg-cover bg-center z-0"
