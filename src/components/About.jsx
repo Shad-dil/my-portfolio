@@ -1,4 +1,9 @@
 import { motion } from "framer-motion";
+import { FaReact } from "react-icons/fa";
+import { IoLogoJavascript } from "react-icons/io5";
+import { RiNextjsFill } from "react-icons/ri";
+import { TbBrandRedux } from "react-icons/tb";
+// import { IoLogoJavascript } from "react-icons/io";
 const About = () => (
   <section className="px-8 py-16 bg-white dark:bg-[#0f0f11]" id="about">
     <div className="flex flex-col items-center mb-6">
@@ -22,27 +27,27 @@ const About = () => (
       <div className="flex flex-wrap justify-center gap-3 mt-6">
         <motion.span
           whileHover={{ scale: 1.1 }}
-          className="px-4 py-1 bg-blue-600 text-white text-sm rounded-full shadow-md"
+          className="px-4 py-1 bg-blue-600 text-white text-sm rounded-full shadow-md flex gap-1"
         >
-          Java Script
+          <IoLogoJavascript className="mt-1" /> Java Script
         </motion.span>
         <motion.span
           whileHover={{ scale: 1.1 }}
-          className="px-4 py-1 bg-purple-600 text-white text-sm rounded-full shadow-md"
+          className="px-4 py-1 bg-purple-600 text-white text-sm rounded-full shadow-md flex gap-1"
         >
-          React.Js
+          <FaReact className="mt-1" /> React.Js
         </motion.span>
         <motion.span
           whileHover={{ scale: 1.1 }}
-          className="px-4 py-1 bg-teal-600 text-white text-sm rounded-full shadow-md"
+          className="px-4 py-1 bg-teal-600 text-white text-sm rounded-full shadow-md flex gap-1"
         >
-          Next.Js
+          <RiNextjsFill className="mt-1" /> Next.Js
         </motion.span>
         <motion.span
           whileHover={{ scale: 1.1 }}
-          className="px-4 py-1 bg-gray-700 text-white text-sm rounded-full shadow-md"
+          className="px-4 py-1 bg-gray-700 text-white text-sm rounded-full shadow-md flex gap-1"
         >
-          Redux-Toolkit
+          <TbBrandRedux className="mt-1" /> Redux-Toolkit
         </motion.span>
       </div>
     </div>
