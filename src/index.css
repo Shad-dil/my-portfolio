@@ -12,3 +12,17 @@ html {
 .gradient-title {
   @apply bg-gradient-to-b from-amber-500 to-teal-400 font-bold text-transparent bg-clip-text pb-1 pr-2;
 }
+@keyframes gradient-spin {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient-spin {
+  background-size: 200% 200%;
+  animation: gradient-spin 3s linear infinite;
+}

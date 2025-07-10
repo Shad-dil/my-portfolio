@@ -1,11 +1,17 @@
 const About = () => (
   <section className="px-8 py-16 bg-white dark:bg-[#0f0f11]" id="about">
     <div className="flex flex-col items-center mb-6">
-      <img
-        src="/Profile.jpg" // Replace with your actual photo path
-        alt="My portrait"
-        className="w-32 h-32 rounded-full object-cover border-4 border-gray-200 dark:border-gray-700 shadow-md mb-4"
-      />
+      <div className="flex justify-center mb-6">
+        <div className="relative w-40 h-40 rounded-full p-[6px] bg-gradient-to-tr from-blue-500 via-purple-500 to-pink-500 animate-gradient-spin">
+          <div className="rounded-full overflow-hidden w-full h-full bg-dark shadow-inner">
+            <img
+              src="/Profile.jpg"
+              alt="Dilshad"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
       <h2 className="text-3xl font-semibold">About Me</h2>
       <p className="text-gray-700 dark:text-gray-400 max-w-3xl text-center">
         “I’m a frontend developer with 3 years’ experience crafting scalable
