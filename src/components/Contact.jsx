@@ -16,7 +16,7 @@ const Contact = () => {
       <p className="text-gray-600 dark:text-gray-400 mb-4">
         Want to collaborate or just say hi? Let's connect.
       </p>
-      <div className="space-y-2 text-sm grid grid-cols-2">
+      <div className="space-y-2 text-sm grid grid-cols-1 sm:grid-cols-2">
         <div>
           <a
             href="mailto:hellodilshad3@gmail.com"
@@ -39,7 +39,7 @@ const Contact = () => {
             <FaGithub className="mt-1" /> GitHub
           </a>
         </div>
-        <div>
+        <div className="flex flex-col sm:flex-row gap-2 w-full">
           <input
             type="email"
             name="email"
@@ -47,17 +47,17 @@ const Contact = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your Email id ..."
-            className="py-2 px-2 w-[500px] text-left text-gray-700 rounded-md "
+            className="py-2 px-2 w-full text-left text-gray-700 rounded-md"
           />
           <button
-            className="px-2 py-2 mx-3 bg-gray-700 rounded-md"
+            className="w-full sm:w-auto px-4 py-2 bg-gray-700 rounded-md text-white"
             onClick={handleSubmit}
           >
             Submit
           </button>
-          <br />
-          <span className="text-red-500">{error.email}</span>
         </div>
+        <br />
+        <span className="text-red-500">{error.email}</span>
       </div>
       <div className="flex justify-center items-center my-4">
         <p>Made with 💗</p>

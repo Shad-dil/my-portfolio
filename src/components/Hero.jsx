@@ -20,7 +20,7 @@ const Hero = () => (
       className="relative z-20"
     >
       <motion.h1
-        className="text-5xl font-bold mb-3 tracking-tight"
+        className="text-5xl font-bold mb-3 tracking-tight gradient-title"
         initial={{ opacity: 0, x: -80 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
