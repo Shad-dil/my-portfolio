@@ -1,29 +1,43 @@
-const Experience = () => (
-  <section className="px-8 py-16 bg-gray-50 dark:bg-[#121215]" id="experience">
-    <h2 className="text-3xl font-semibold mb-6">Experience</h2>
-    <div className="space-y-4 text-gray-700 dark:text-gray-400">
-      <div>
-        <h3 className="font-semibold text-black dark:text-white">
-          Frontend Developer – Infosys
-        </h3>
-        <p className="text-sm">Oct 2022 – Present</p>
-        <p>
-          • Built reusable UI components using React.js,Tailwind, and Redux
-          Toolkit.
-        </p>
-        <p>• Integrated REST APIs for dashboards and workflows. </p>
-        <p>•Participated in Agile sprints, code reviews, and stand-ups. </p>
-        <h3 className="font-semibold text-black dark:text-white my-3">
-          Project: Digital Banking Portal
-        </h3>
-        <p className="text-sm">Aug 2024 – Present</p>
-        <p>• Revamped banking UI with React.js & Next.js</p>
-        <p>• Improved load speed by 30% and user engagement by 20%.</p>
-        <p>
-          • Built modular, user-focused interfaces for customer/admin portals.
-        </p>
+export default function Experience() {
+  const jobs = [
+    {
+      role: "Frontend Developer – Infosys",
+      company: "Infosys",
+      duration: "2022 - Present",
+      desc: ["Built reusable UI components using React.js,Tailwind, and Redux Toolkit.","Integrated REST APIs for dashboards and workflows.","Participated in Agile sprints, code reviews, and stand-ups."],
+    },
+    {
+      role: "Project: Digital Banking Portal",
+      company: "Infosys",
+      duration: "2024-Present",
+      desc: ["Revamped banking UI with React.js & Next.js","Improved load speed by 30% and user engagement by 20%","Built modular, user-focused interfaces for customer/admin portals."]
+    },
+  ];
+
+  return (
+    <section id="experience" className="py-20 max-w-5xl mx-auto px-6">
+      <h2 className="text-3xl font-bold text-cyan-300 mb-12 text-center">
+        Experience
+      </h2>
+
+      <div className="space-y-8 relative before:absolute before:top-0 before:bottom-0 before:left-4 before:w-0.5 before:bg-cyan-300/30">
+        {jobs.map((job, index) => (
+          <div key={index} className="ml-12 relative">
+            {/* Timeline dot */}
+            <span className="absolute -left-7 top-2 w-4 h-4 rounded-full bg-cyan-300 shadow-cyan-300 shadow-md"></span>
+
+            {/* Job Card */}
+            <div className="bg-[#ffffff0d] backdrop-blur-md rounded-xl p-6 shadow-lg hover:shadow-cyan-500/20 transition">
+              <h3 className="text-xl font-semibold text-cyan-300">{job.role}</h3>
+              <p className="text-gray-400">
+                {job.company} • {job.duration}
+              </p>
+              {job.desc.map((j,i)=> <p key={i} className="mt-2 text-gray-300">{j}</p>)}
+              
+            </div>
+          </div>
+        ))}
       </div>
-    </div>
-  </section>
-);
-export default Experience;
+    </section>
+  );
+}

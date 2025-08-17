@@ -18,11 +18,11 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="flex justify-between items-center px-8 py-5 bg-white dark:bg-[#0f0f11] border-b border-gray-200 dark:border-gray-800 fixed w-full  top-0 z-50">
-      <h1 className="text-2xl font-bold tracking-tight text-blue-600 dark:text-blue-400">
+    <header className="flex justify-between items-center px-8 py-5 bg-white dark:bg-[#0f0f11] border-b border-gray-200 dark:border-gray-800 fixed w-full  top-0 z-50 opacity-70">
+      <h1 className="text-2xl font-bold tracking-tight text-cyan-300 dark:text-cyan-300">
         <a
           href="/"
-          className="text-2xl font-bold tracking-tight text-blue-600 dark:text-blue-400"
+          className="text-2xl font-bold tracking-tight text-cyan-300 dark:text-cyan-300"
           aria-label="Home"
           style={{ fontFamily: "monospace" }}
         >
@@ -33,7 +33,7 @@ const Navbar = () => {
       <nav className="hidden md:flex space-x-6 text-sm items-center">
         <a
           href="#about"
-          className="hover:text-blue-500 dark:hover:text-blue-400"
+          className="hover:text-blue-500 dark:hover:text-blue-400 text-cyan-300"
         >
           About
         </a>

@@ -29,25 +29,31 @@ const About = () => (
           whileHover={{ scale: 1.1 }}
           className="px-4 py-1 bg-blue-600 text-white text-sm rounded-full shadow-md flex gap-1"
         >
-          <IoLogoJavascript className="mt-1" /> Java Script
+          <IoLogoJavascript className="mt-1 cursor-pointer" /> Java Script
         </motion.span>
         <motion.span
           whileHover={{ scale: 1.1 }}
           className="px-4 py-1 bg-purple-600 text-white text-sm rounded-full shadow-md flex gap-1"
         >
-          <FaReact className="mt-1" /> React.Js
+          <FaReact className="mt-1 cursor-pointer" /> React.Js
         </motion.span>
         <motion.span
           whileHover={{ scale: 1.1 }}
           className="px-4 py-1 bg-teal-600 text-white text-sm rounded-full shadow-md flex gap-1"
         >
-          <RiNextjsFill className="mt-1" /> Next.Js
+          <RiNextjsFill className="mt-1 cursor-pointer" /> Next.Js
         </motion.span>
         <motion.span
           whileHover={{ scale: 1.1 }}
           className="px-4 py-1 bg-gray-700 text-white text-sm rounded-full shadow-md flex gap-1"
         >
-          <TbBrandRedux className="mt-1" /> Redux-Toolkit
+          <TbBrandRedux className="mt-1 cursor-pointer" /> Redux-Toolkit
+        </motion.span>
+        <motion.span
+          whileHover={{ scale: 1.1 }}
+          className="px-4 py-1 bg-amber-700 text-white text-sm rounded-full shadow-md flex gap-1"
+        >
+          <TbBrandRedux className="mt-1 cursor-pointer" /> React Testing Library/Jest
         </motion.span>
       </div>
     </div>

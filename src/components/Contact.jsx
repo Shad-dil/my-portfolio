@@ -49,7 +49,7 @@ const ContactSection = () => {
           </p>
           <div className="flex gap-6 text-cyan-300 text-3xl">
             <motion.a
-              href="https://github.com/shad"
+              href="https://github.com/Shad-dil"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2 }}
@@ -57,7 +57,7 @@ const ContactSection = () => {
               <FaGithub />
             </motion.a>
             <motion.a
-              href="https://linkedin.com/in/shad"
+              href="https://www.linkedin.com/in/shad-dil/"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2 }}
@@ -65,7 +65,7 @@ const ContactSection = () => {
               <FaLinkedin />
             </motion.a>
             <motion.a
-              href="mailto:shad@example.com"
+              href="mailto:helloshad3@gmail.com"
               whileHover={{ scale: 1.2 }}
             >
               <FaEnvelope />
