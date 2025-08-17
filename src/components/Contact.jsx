@@ -1,68 +1,124 @@
-import { useState } from "react";
-import { CgMail } from "react-icons/cg";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import React, { useRef } from "react";
+import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
-const Contact = () => {
-  const [email, setEmail] = useState("");
-  const [error, setError] = useState({});
-  const handleSubmit = () => {
-    if (!email || email.length === 0) setError({ email: "Please Enter email" });
-    console.log("submittedd");
+const ContactSection = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "YOUR_SERVICE_ID", // from EmailJS dashboard
+        "YOUR_TEMPLATE_ID", // from EmailJS dashboard
+        form.current,
+        "YOUR_PUBLIC_KEY" // from EmailJS dashboard
+      )
+      .then(
+        () => {
+          alert("✅ Message sent successfully!");
+          form.current.reset();
+        },
+        (error) => {
+          console.error("❌ Failed...", error.text);
+          alert("Something went wrong. Try again later!");
+        }
+      );
   };
-  return (
-    <section className="px-8 py-16 bg-white dark:bg-[#0f0f11]" id="contact">
-      <h2 className="text-3xl font-semibold mb-4">Get in Touch</h2>
 
-      <p className="text-gray-600 dark:text-gray-400 mb-4">
-        Want to collaborate or just say hi? Let's connect.
-      </p>
-      <div className="space-y-2 text-sm grid grid-cols-1 sm:grid-cols-2">
-        <div>
-          <a
-            href="mailto:hellodilshad3@gmail.com"
-            className="flex hover:text-blue-500 dark:hover:text-blue-400 gap-1"
-          >
-            <CgMail className="mt-1" /> hellodilshad3@gmail.com
-          </a>
-          <a
-            href="https://www.linkedin.com/in/shad-dil/"
-            target="_blank"
-            className="flex hover:text-blue-500 dark:hover:text-blue-400 gap-1"
-          >
-            <FaLinkedin className="mt-1" /> LinkedIn
-          </a>
-          <a
-            href="https://github.com/Shad-dil"
-            target="_blank"
-            className=" hover:text-blue-500 dark:hover:text-blue-400 flex gap-1"
-          >
-            <FaGithub className="mt-1" /> GitHub
-          </a>
-        </div>
-        <div className="flex flex-col sm:flex-row gap-2 w-full">
+  return (
+    <section id="contact" className="relative z-10 py-20 px-6 md:px-12 lg:px-24">
+      <h2 className="text-4xl font-bold text-center text-cyan-300 drop-shadow-[0_0_10px_#00f5d4] mb-12">
+        Contact Me
+      </h2>
+
+      <div className="grid gap-12 md:grid-cols-2">
+        {/* Social Links */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="flex flex-col items-center justify-center gap-6"
+        >
+          <p className="text-gray-300 text-lg mb-4 text-center">
+            Let’s connect! You can reach out via email or find me on social
+            media.
+          </p>
+          <div className="flex gap-6 text-cyan-300 text-3xl">
+            <motion.a
+              href="https://github.com/shad"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.2 }}
+            >
+              <FaGithub />
+            </motion.a>
+            <motion.a
+              href="https://linkedin.com/in/shad"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.2 }}
+            >
+              <FaLinkedin />
+            </motion.a>
+            <motion.a
+              href="mailto:shad@example.com"
+              whileHover={{ scale: 1.2 }}
+            >
+              <FaEnvelope />
+            </motion.a>
+          </div>
+        </motion.div>
+
+        {/* Contact Form */}
+        <motion.form
+          ref={form}
+          onSubmit={sendEmail}
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="bg-white/10 backdrop-blur-md p-8 rounded-2xl shadow-lg flex flex-col gap-4"
+        >
+          <input
+            type="text"
+            name="user_name"
+            placeholder="Your Name"
+            required
+            className="w-full p-3 rounded-lg bg-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+          />
           <input
             type="email"
-            name="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter your Email id ..."
-            className="py-2 px-2 w-full text-left text-gray-700 rounded-md"
+            name="user_email"
+            placeholder="Your Email"
+            required
+            className="w-full p-3 rounded-lg bg-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+          />
+          <textarea
+            name="message"
+            rows="4"
+            placeholder="Your Message"
+            required
+            className="w-full p-3 rounded-lg bg-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400"
           />
           <button
-            className="w-full sm:w-auto px-4 py-2 bg-gray-700 rounded-md text-white"
-            onClick={handleSubmit}
+            type="submit"
+            className="px-6 py-3 bg-cyan-400 text-black font-medium rounded-lg hover:bg-cyan-300 transition"
           >
-            Submit
+            Send Message
           </button>
-        </div>
-        <br />
-        <span className="text-red-500">{error.email}</span>
+        </motion.form>
       </div>
-      <div className="flex justify-center items-center mt-4">
-        © 2025 Dilshad.dev — Built with React.js & Tailwind CSS
-      </div>
+      <div>© 2025 Dilshad.dev — Built with React.js & Tailwind CSS</div>
     </section>
   );
 };
-export default Contact;
+
+export default ContactSection;
+
+
+
+// © 2025 Dilshad.dev — Built with React.js & Tailwind CSS

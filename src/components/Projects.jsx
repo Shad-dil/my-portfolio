@@ -69,10 +69,14 @@ const Projects = () => {
       >
         <div className="grid md:grid-cols-3 gap-6">
           {projects.map((project, idx) => (
-            <div
-              key={idx}
-              className="bg-gray-100 dark:bg-[#18181c] p-6 rounded-lg border border-gray-300 dark:border-gray-800"
-            >
+           <motion.div
+            key={idx}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: idx * 0.2 }}
+            viewport={{ once: true }}
+            className="bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-lg hover:scale-105 hover:shadow-cyan-500/30 transition-all duration-300"
+          >
               <h3 className="text-xl font-bold mb-1 text-blue-600 dark:text-blue-300">
                 {project.title}
               </h3>
@@ -125,7 +129,7 @@ const Projects = () => {
                   View on GitHub ↗
                 </a>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </motion.div>
