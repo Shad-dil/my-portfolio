@@ -18,11 +18,11 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="flex justify-between items-center px-8 py-5 bg-white dark:bg-[#0f0f11] border-b border-gray-200 dark:border-gray-800 fixed w-full  top-0 z-50 opacity-70">
-      <h1 className="text-2xl font-bold tracking-tight text-cyan-300 dark:text-cyan-300">
+    <header className="flex justify-between items-center px-8 py-5 bg-white  border-b border-gray-200  fixed w-full  top-0 z-50 ">
+      <h1 className="text-2xl font-bold tracking-tight text-blue-700 ">
         <a
           href="/"
-          className="text-2xl font-bold tracking-tight text-cyan-300 dark:text-cyan-300"
+          className="text-2xl font-bold tracking-tight text-indigo-600"
           aria-label="Home"
           style={{ fontFamily: "monospace" }}
         >
@@ -31,28 +31,16 @@ const Navbar = () => {
       </h1>
       {/* Desktop nav */}
       <nav className="hidden md:flex space-x-6 text-sm items-center">
-        <a
-          href="#about"
-          className="hover:text-blue-500 dark:hover:text-blue-400 text-cyan-300"
-        >
+        <a href="#about" className="hover:text-blue-500 text-blue-500">
           About
         </a>
-        <a
-          href="#projects"
-          className="hover:text-blue-500 dark:hover:text-blue-400"
-        >
+        <a href="#projects" className="hover:text-blue-500 text-blue-500">
           Projects
         </a>
-        <a
-          href="#experience"
-          className="hover:text-blue-500 dark:hover:text-blue-400"
-        >
+        <a href="#experience" className="hover:text-blue-500 text-blue-500">
           Experience
         </a>
-        <a
-          href="#contact"
-          className="hover:text-blue-500 dark:hover:text-blue-400"
-        >
+        <a href="#contact" className="hover:text-blue-500 text-blue-500">
           Contact
         </a>
         {/* <button
