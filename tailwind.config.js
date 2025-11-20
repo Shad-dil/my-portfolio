@@ -5,11 +5,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "#1E1E2F",
+        "background-color": "#1E1E2F",
         surface: "#151522",
-        textPrimary: "#ECEFF4",
-        textSecondary: "#AEB1C5",
+        "primary-color": "#4F46E5",
+        "secondary-color": "#6366F1",
         accent: "#5E81AC",
+        "card-bg": "#1E293B",
         cta: "#BF616A",
         border: "#2C2F3F",
       },

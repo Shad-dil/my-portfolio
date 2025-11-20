@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { BiDownArrow, BiDownArrowCircle } from "react-icons/bi";
+import { BsEye, BsGithub } from "react-icons/bs";
 
 const Hero = () => (
   // <section className="relative min-h-screen flex items-center justify-center text-center px-4 bg-gradient-to-b from-gray-100 to-gray-800 overflow-x-hidden">
@@ -70,29 +72,46 @@ const Hero = () => (
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        Hey, I'm Dilshad
+        MD Dilshad
       </motion.h1>
 
       <p className="text-base sm:text-lg text-white  mb-6">
-        Frontend Developer | React Specialist | UI Enthusiast
+        Frontend Developer (React.js | Next.js | UI Performance)
+        <br />I build fast, modern, and scalable web applications with React &
+        Next.js.
       </p>
 
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a
-          href="#projects"
-          className="px-5 py-2 bg-white hover:bg-blue-100 rounded-full text-blue-700 text-sm w-[200px] text-center"
-        >
-          View My Work
-        </a>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="flex flex-col sm:flex-row items-center justify-center gap-4"
+      >
         <a
           href="/dev_resume.pdf"
           target="_blank"
-          className="px-5 py-2  bg-white hover:bg-blue-100 rounded-full text-blue-700 text-sm w-[200px] text-center"
+          // Add 'flex items-center justify-center gap-2' to align content horizontally
+          className="px-5 py-2 bg-white hover:bg-blue-100 rounded-full text-primary-color text-sm w-[200px] text-center flex items-center justify-center gap-2"
           download
         >
-          View My Resume
+          View My Resume{" "}
+          <BiDownArrowCircle className="inline-block h-4 w-4 ml-1" />
         </a>
-      </div>
+
+        <a
+          href="#projects"
+          className="px-5 py-2 bg-white hover:bg-blue-100 rounded-full text-primary-color text-sm w-[200px] text-center"
+        >
+          View Projects <BsEye className="inline-block h-4 w-4 ml-1" />
+        </a>
+        <a
+          href="https://github.com/Shad-dil"
+          target="_blank"
+          className="px-5 py-2 bg-white hover:bg-blue-100 rounded-full text-primary-color text-sm w-[200px] text-center"
+        >
+          Github <BsGithub className="inline-block h-4 w-4 ml-1" />
+        </a>
+      </motion.div>
 
       {/* Floating Profile Image */}
       <div className="relative mt-10">
