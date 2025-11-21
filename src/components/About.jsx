@@ -20,9 +20,11 @@ const About = () => (
       </div>
       <h2 className="text-3xl font-semibold">About Me</h2>
       <p className="text-gray-700 dark:text-gray-400 max-w-3xl text-center">
-        “I’m a frontend developer with 3 years’ experience crafting scalable
-        interfaces in React and Next.js. I enjoy working with design systems,
-        clean UI, and optimizing performance.”
+        “I’m a Frontend Developer with 3 years of experience building scalable,
+        high-performance web applications using React.js and Next.js. Worked on
+        enterprise banking platforms for GCC clients (UAE, KSA) at Infosys.
+        Passionate about UI performance, API-driven development, and building
+        clean, maintainable interfaces.”
       </p>
       <div className="flex flex-wrap justify-center gap-3 mt-6">
         <motion.span
@@ -53,7 +55,8 @@ const About = () => (
           whileHover={{ scale: 1.1 }}
           className="px-4 py-1 bg-amber-700 text-white text-sm rounded-full shadow-md flex gap-1"
         >
-          <TbBrandRedux className="mt-1 cursor-pointer" /> React Testing Library/Jest
+          <TbBrandRedux className="mt-1 cursor-pointer" /> React Testing
+          Library/Jest
         </motion.span>
       </div>
     </div>

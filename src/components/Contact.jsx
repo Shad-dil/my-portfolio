@@ -29,7 +29,10 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="relative z-10 py-20 px-6 md:px-12 lg:px-24">
+    <section
+      id="contact"
+      className="relative z-10 py-20 px-6 md:px-12 lg:px-24"
+    >
       <h2 className="text-4xl font-bold text-center text-cyan-300 drop-shadow-[0_0_10px_#00f5d4] mb-12">
         Contact Me
       </h2>
@@ -112,13 +115,11 @@ const ContactSection = () => {
           </button>
         </motion.form>
       </div>
-      <div>© 2025 Dilshad.dev — Built with React.js & Tailwind CSS</div>
+      <div>Built with Next.js & Tailwind © 2025 Dilshad</div>
     </section>
   );
 };
 
 export default ContactSection;
-
-
 
 // © 2025 Dilshad.dev — Built with React.js & Tailwind CSS

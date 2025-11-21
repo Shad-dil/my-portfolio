@@ -16,8 +16,6 @@ function App() {
   }, []);
   return (
     <div className="font-sans text-textPrimary dark:text-gray-100 bg-white dark:bg-background max-w-screen overflow-x-hidden">
-      
-      
       <Navbar />
       <Hero />
       <ScrollFadeIn>

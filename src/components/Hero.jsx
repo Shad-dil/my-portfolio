@@ -91,7 +91,7 @@ const Hero = () => (
           href="/dev_resume.pdf"
           target="_blank"
           // Add 'flex items-center justify-center gap-2' to align content horizontally
-          className="px-5 py-2 bg-white hover:bg-blue-100 rounded-full text-blue-700 text-sm w-[200px] text-center flex items-center justify-center gap-2"
+          className="px-5 py-2 bg-white hover:bg-blue-100 rounded-full text-blue-700 text-sm w-[200px] text-center flex items-center justify-center gap-2 hover:-translate-y-2 transition-all"
           download
         >
           View My Resume{" "}
@@ -100,14 +100,14 @@ const Hero = () => (
 
         <a
           href="#projects"
-          className="px-5 py-2 bg-white hover:bg-blue-100 rounded-full text-blue-700 text-sm w-[200px] text-center"
+          className="px-5 py-2 bg-white hover:bg-blue-100 rounded-full text-blue-700 text-sm w-[200px] text-center hover:-translate-y-2 transition-all"
         >
           View Projects <BsEye className="inline-block h-4 w-4 ml-1" />
         </a>
         <a
           href="https://github.com/Shad-dil"
           target="_blank"
-          className="px-5 py-2 bg-white hover:bg-blue-100 rounded-full text-blue-700 text-sm w-[200px] text-center"
+          className="px-5 py-2 bg-white hover:bg-blue-100 rounded-full text-blue-700 text-sm w-[200px] text-center hover:-translate-y-2 transition-all"
         >
           Github <BsGithub className="inline-block h-4 w-4 ml-1" />
         </a>
