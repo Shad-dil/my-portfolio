@@ -1,68 +1,4 @@
-// import { motion } from "framer-motion";
-// import { FaReact } from "react-icons/fa";
-// import { IoLogoJavascript } from "react-icons/io5";
-// import { RiNextjsFill } from "react-icons/ri";
-// import { TbBrandRedux } from "react-icons/tb";
-// // import { IoLogoJavascript } from "react-icons/io";
-// const About = () => (
-//   <section className="px-8 py-16 bg-white dark:bg-[#0f0f11]" id="about">
-//     <div className="flex flex-col items-center mb-6">
-//       <div className="flex justify-center mb-6">
-//         <div className="relative w-40 h-40 rounded-full p-[6px] bg-gradient-to-tr from-blue-500 via-purple-500 to-pink-500 animate-gradient-spin  hover:scale-105 transition-transform duration-300 ease-in-out">
-//           <div className="rounded-full overflow-hidden w-full h-full bg-dark shadow-inner">
-//             <img
-//               src="/Profile.jpg"
-//               alt="Dilshad"
-//               className="w-full h-full object-cover"
-//             />
-//           </div>
-//         </div>
-//       </div>
-//       <h2 className="text-3xl font-semibold">About Me</h2>
-//       <p className="text-gray-700 dark:text-gray-400 max-w-3xl text-center">
-//         “I’m a Frontend Developer with 3 years of experience building scalable,
-//         high-performance web applications using React.js and Next.js. Worked on
-//         enterprise banking platforms for GCC clients (UAE, KSA) at Infosys.
-//         Passionate about UI performance, API-driven development, and building
-//         clean, maintainable interfaces.”
-//       </p>
-//       <div className="flex flex-wrap justify-center gap-3 mt-6">
-//         <motion.span
-//           whileHover={{ scale: 1.1 }}
-//           className="px-4 py-1 bg-blue-600 text-white text-sm rounded-full shadow-md flex gap-1"
-//         >
-//           <IoLogoJavascript className="mt-1 cursor-pointer" /> Java Script
-//         </motion.span>
-//         <motion.span
-//           whileHover={{ scale: 1.1 }}
-//           className="px-4 py-1 bg-purple-600 text-white text-sm rounded-full shadow-md flex gap-1"
-//         >
-//           <FaReact className="mt-1 cursor-pointer" /> React.Js
-//         </motion.span>
-//         <motion.span
-//           whileHover={{ scale: 1.1 }}
-//           className="px-4 py-1 bg-teal-600 text-white text-sm rounded-full shadow-md flex gap-1"
-//         >
-//           <RiNextjsFill className="mt-1 cursor-pointer" /> Next.Js
-//         </motion.span>
-//         <motion.span
-//           whileHover={{ scale: 1.1 }}
-//           className="px-4 py-1 bg-gray-700 text-white text-sm rounded-full shadow-md flex gap-1"
-//         >
-//           <TbBrandRedux className="mt-1 cursor-pointer" /> Redux-Toolkit
-//         </motion.span>
-//         <motion.span
-//           whileHover={{ scale: 1.1 }}
-//           className="px-4 py-1 bg-amber-700 text-white text-sm rounded-full shadow-md flex gap-1"
-//         >
-//           <TbBrandRedux className="mt-1 cursor-pointer" /> React Testing
-//           Library/Jest
-//         </motion.span>
-//       </div>
-//     </div>
-//   </section>
-// );
-// export default About;
+"use client";
 
 import { motion } from "framer-motion";
 import { FaReact } from "react-icons/fa";
@@ -70,104 +6,109 @@ import { IoLogoJavascript } from "react-icons/io5";
 import { RiNextjsFill } from "react-icons/ri";
 import { TbBrandRedux } from "react-icons/tb";
 
-const About = () => {
+export default function About() {
   return (
     <section
       id="about"
       className="px-8 py-24 bg-[#0f0f13] text-white relative overflow-hidden"
     >
-      <div className="flex flex-col items-center max-w-4xl mx-auto">
-        {/* Profile Image with Glow Border */}
+      <div className="max-w-4xl mx-auto flex flex-col items-center">
+        {/* PROFILE IMAGE */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
+          initial={{ opacity: 0, scale: 0.85 }}
           whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative w-40 h-40 mb-6"
+          className="relative w-40 h-40 mb-8"
         >
-          <div
-            className="absolute inset-0 rounded-full bg-gradient-to-br 
-            from-purple-500 via-pink-500 to-blue-500 opacity-60 blur-xl"
-          />
-          <div className="relative rounded-full overflow-hidden w-40 h-40 border-[3px] border-purple-400 shadow-xl">
+          {/* subtle glow */}
+          <div className="absolute inset-0 rounded-full bg-[#A26BFF]/20 blur-2xl" />
+
+          <div className="relative w-40 h-40 rounded-full overflow-hidden border border-white/10 shadow-xl">
             <img
               src="/Profile.jpg"
-              alt="Dilshad"
+              alt="MD Dilshad"
               className="w-full h-full object-cover"
             />
           </div>
         </motion.div>
 
-        {/* Heading */}
+        {/* HEADING */}
         <motion.h2
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           className="text-4xl font-bold tracking-tight mb-4"
         >
           About Me
         </motion.h2>
 
-        {/* Description */}
+        {/* DESCRIPTION (senior rewritten) */}
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.7 }}
-          className="text-gray-300 text-center leading-relaxed max-w-2xl"
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-gray-300 text-center leading-relaxed max-w-2xl text-lg"
         >
-          I’m a Frontend Developer with 3 years of experience building scalable,
-          high-performance web applications using React.js and Next.js.
-          Previously worked on enterprise banking platforms for GCC clients
-          (UAE, KSA) at Infosys. I care deeply about UI performance, API-driven
-          development, and crafting clean, maintainable interfaces.
+          I'm a Frontend Engineer with 3+ years of experience building
+          data-intensive dashboards, SaaS products, and high-performance
+          interfaces using React and Next.js.
+          <br />
+          My background includes working on enterprise banking applications for
+          GCC clients (UAE, KSA) at Infosys, focusing on performance,
+          accessibility, and scalable UI architecture.
+          <br />I care deeply about design systems, DX, and turning complex data
+          into simple, usable interfaces.
         </motion.p>
 
-        {/* Skill Chips */}
+        {/* SKILL GROUP – clean, senior, minimal */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-3 mt-8"
+          className="mt-10 grid grid-cols-2 sm:grid-cols-3 gap-4 w-full max-w-2xl"
         >
           {[
             {
               icon: <IoLogoJavascript />,
-              label: "JavaScript",
-              color: "from-yellow-500 to-amber-600",
+              label: "JavaScript (ES6+)",
             },
             {
               icon: <FaReact />,
               label: "React.js",
-              color: "from-blue-500 to-cyan-500",
             },
             {
               icon: <RiNextjsFill />,
               label: "Next.js",
-              color: "from-gray-700 to-gray-900",
             },
             {
               icon: <TbBrandRedux />,
               label: "Redux Toolkit",
-              color: "from-purple-600 to-purple-700",
             },
             {
               icon: <TbBrandRedux />,
-              label: "RTL / Jest",
-              color: "from-orange-600 to-amber-700",
+              label: "Testing (RTL & Jest)",
             },
-          ].map(({ icon, label, color }, index) => (
-            <motion.span
+            {
+              icon: <FaReact />,
+              label: "Performance & Optimization",
+            },
+          ].map(({ icon, label }, index) => (
+            <motion.div
               key={index}
-              whileHover={{ scale: 1.1 }}
-              className={`px-4 py-2 rounded-full text-sm flex items-center gap-2 
-              bg-gradient-to-r ${color} text-white shadow-lg border border-white/10`}
+              whileHover={{ scale: 1.05 }}
+              className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 
+              border border-white/10 shadow-md backdrop-blur-sm"
             >
-              <span className="text-lg">{icon}</span> {label}
-            </motion.span>
+              <span className="text-xl text-[#A26BFF]">{icon}</span>
+              <span className="text-sm text-gray-200">{label}</span>
+            </motion.div>
           ))}
         </motion.div>
       </div>
     </section>
   );
-};
-
-export default About;
+}
