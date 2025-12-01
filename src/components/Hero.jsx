@@ -102,13 +102,13 @@ const Hero = () => (
       <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
         <a
           href="#projects"
-          className="px-5 py-3 rounded-full bg-[#A26BFF] text-black font-medium shadow"
+          className="px-5 py-3 rounded-full bg-[#A26BFF] text-black font-medium shadow hover:bg-transparent hover:text-white hover:border-white hover:border"
         >
           View Projects <BsEye className="inline-block h-4 w-4 ml-1" />
         </a>
         <a
           href="/dev_resume.pdf"
-          className="px-5 py-3 rounded-full border border-white/10 text-white"
+          className="px-5 py-3 rounded-full border border-white/10 text-white hover:bg-[#A26BFF] hover:text-black"
         >
           Resume <BiDownArrowCircle className="inline-block h-4 w-4 ml-1" />
         </a>

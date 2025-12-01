@@ -9,6 +9,7 @@ import Projects from "./components/Projects";
 import { ScrollFadeIn } from "./components/ScrollFadeIn";
 import Skills from "./components/Skills";
 import "./index.css";
+import WebVitals from "./components/Report";
 
 function App() {
   useEffect(() => {
@@ -25,6 +26,7 @@ function App() {
       <section data-aos="fade-up">
         <Projects />
       </section>
+      <WebVitals />
       <Experience />
       <Contact />
     </div>
