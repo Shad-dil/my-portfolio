@@ -206,45 +206,43 @@ import { IoMdCloseCircle } from "react-icons/io";
 // ⭐ Updated Senior-Level Projects List
 const projects = [
   {
-    title: "PulseBoard – SaaS Analytics Dashboard",
-    desc: "A fully functional SaaS admin dashboard featuring real-time analytics, charts, activity logs, user management, authentication, and Prisma-based database integration. Built with Next.js 16, PostgreSQL, Tailwind, ShadCN UI, Prisma ORM, and Chart.js.",
+    title: "PulseBoard – SaaS Admin Dashboard",
+    featured: true,
+    desc: "A full-stack SaaS admin dashboard with analytics, user management, role-based access, charts, dark mode, and complete CRUD flows — built to demonstrate real product-level architecture.",
     screenshot: "/dashboard_preview.png",
     Livelink: "https://pulse-board-sigma.vercel.app/",
     Githublink: "https://github.com/Shad-dil/pulse-board",
     tech: [
       "Next.js",
-      "React",
+      "Prisma",
       "PostgreSQL",
-      "Prisma ORM",
-      "Tailwind CSS",
-      "ShadCN UI",
-      "Chart.js",
-      "JWT Auth",
+      "Tailwind",
+      "TanStack Query",
+      "Shadcn UI",
     ],
   },
-
   {
     title: "Klimate – Weather Forecast App",
-    desc: "A modern weather dashboard built using Next.js and OpenWeather API. Includes theme switching, responsive charts, hourly & weekly forecasts, and a clean UI powered by Tailwind + ShadCN.",
+    desc: "A modern, responsive weather app with real-time APIs, chart visualizations, theme switching, and clean UI built using Next.js and Shadcn.",
     screenshot: "/klimate.png",
     Livelink: "https://klimate-app-shad.vercel.app/",
     Githublink: "https://github.com/Shad-dil/Klimate-app",
     tech: [
-      "Next.js",
       "TypeScript",
+      "Next.js",
+      "Redux",
       "Tailwind CSS",
-      "ShadCN UI",
+      "Shadcn UI",
       "OpenWeather API",
     ],
   },
-
   {
-    title: "Reflct – Minimal Reflection Journal",
-    desc: "A minimal journaling web app for creating reflections and tracking thoughts. Includes authentication, clean UI, light/dark theme, and Prisma-powered backend.",
+    title: "Reflct – Minimal Blog & Journal",
+    desc: "A minimal journaling platform with authentication, theme switching, and distraction-free writing. Built with Next.js and Prisma.",
     screenshot: "/reflect.png",
     Livelink: "https://reflct-pi.vercel.app/",
     Githublink: "https://github.com/Shad-dil/reflct",
-    tech: ["Next.js", "Tailwind CSS", "Prisma", "Clerk", "ShadCN UI"],
+    tech: ["Next.js", "Tailwind", "Clerk", "Prisma"],
   },
 ];
 
@@ -252,142 +250,127 @@ export default function Projects() {
   const [modalOpen, setModalOpen] = useState(false);
   const [selected, setSelected] = useState(null);
 
-  return (
-    <section id="projects" className="px-6 py-20 bg-[#0f0f11] text-white">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">
-          Featured Projects
-        </h2>
+  const sorted = [...projects].sort((a, b) =>
+    a.featured ? -1 : b.featured ? 1 : 0
+  );
 
-        {/* GRID */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: i * 0.15 }}
-              viewport={{ once: true }}
-              className="
-                bg-white/5 border border-white/10 rounded-2xl 
-                p-5 shadow-xl backdrop-blur-xl 
-                hover:shadow-purple-500/20 hover:-translate-y-2 
-                transition-all duration-300 cursor-pointer
-              "
+  return (
+    <section id="projects" className="px-8 py-20 bg-[#13131a] text-white">
+      {/* Heading */}
+      <motion.h2
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="text-4xl font-bold mb-12 text-center"
+      >
+        Projects
+      </motion.h2>
+
+      {/* Project Grid */}
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        {sorted.map((p, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: i * 0.15 }}
+            viewport={{ once: true }}
+            className="rounded-xl bg-[#1a1a22] border border-white/10 p-6 shadow-lg hover:shadow-purple-500/20 transition-all duration-300 hover:-translate-y-1"
+          >
+            {/* Featured Badge */}
+            {p.featured && (
+              <span className="inline-block mb-3 px-3 py-1 text-xs bg-purple-600/20 text-purple-300 border border-purple-500/30 rounded-full">
+                ⭐ Featured Project
+              </span>
+            )}
+
+            {/* Screenshot */}
+            <div
               onClick={() => {
-                setSelected(project);
+                setSelected(p);
                 setModalOpen(true);
               }}
+              className="relative group cursor-pointer"
             >
-              {/* IMAGE */}
-              <div className="relative group">
-                <img
-                  src={project.screenshot}
-                  alt={project.title}
-                  className="rounded-xl h-40 w-full object-cover group-hover:opacity-90 transition"
-                />
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 rounded-xl flex items-center justify-center transition">
-                  <span className="text-white font-medium">Preview</span>
-                </div>
+              <img
+                src={p.screenshot}
+                className="rounded-lg h-40 w-full object-cover border border-white/10 group-hover:opacity-80 transition"
+                alt={p.title}
+              />
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center rounded-lg transition">
+                <span className="text-sm font-semibold">Preview</span>
               </div>
+            </div>
 
-              {/* TEXT */}
-              <h3 className="text-xl font-semibold mt-4 mb-2">
-                {project.title}
-              </h3>
+            {/* Title */}
+            <h3 className="mt-4 text-xl font-semibold text-purple-300">
+              {p.title}
+            </h3>
 
-              <p className="text-sm text-gray-400 line-clamp-3">
-                {project.desc}
-              </p>
+            {/* Description */}
+            <p className="mt-2 text-sm text-gray-300">{p.desc}</p>
 
-              {/* TECH */}
-              <div className="flex flex-wrap gap-2 mt-4">
-                {project.tech.map((tech, t) => (
-                  <span
-                    key={t}
-                    className="
-                      text-xs px-3 py-1 rounded-full 
-                      bg-white/10 border border-white/20 
-                      text-gray-200
-                    "
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-
-              {/* LINKS */}
-              <div className="flex justify-between mt-4 text-sm">
-                <a
-                  href={project.Livelink}
-                  target="_blank"
-                  className="text-purple-400 hover:underline"
+            {/* Tech Stack */}
+            <div className="flex flex-wrap gap-2 mt-4">
+              {p.tech.map((t, idx) => (
+                <span
+                  key={idx}
+                  className="px-3 py-1 rounded-full text-xs bg-white/5 border border-white/10 text-gray-200"
                 >
-                  Live ↗
-                </a>
-                <a
-                  href={project.Githublink}
-                  target="_blank"
-                  className="text-purple-400 hover:underline"
-                >
-                  GitHub ↗
-                </a>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+                  {t}
+                </span>
+              ))}
+            </div>
+
+            {/* Links */}
+            <div className="flex justify-between mt-5 text-sm">
+              <a
+                href={p.Livelink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-purple-400 hover:underline"
+              >
+                Live ↗
+              </a>
+
+              <a
+                href={p.Githublink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-purple-400 hover:underline"
+              >
+                GitHub ↗
+              </a>
+            </div>
+          </motion.div>
+        ))}
       </div>
 
-      {/* MODAL */}
+      {/* Modal */}
       {modalOpen && selected && (
         <div
-          className="fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center z-50 p-4 "
+          className="fixed inset-0 bg-black/85 z-50 flex items-center justify-center"
           onClick={() => setModalOpen(false)}
         >
           <div
-            className="bg-[#18181c] p-6 rounded-2xl max-w-[700px] w-full relative shadow-2xl border border-white/10"
+            className="relative p-4 bg-[#1a1a22] rounded-xl w-full max-w-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Close */}
             <button
+              className="absolute top-2 right-2 text-3xl text-gray-300"
               onClick={() => setModalOpen(false)}
-              className="absolute top-3 right-3 text-3xl text-gray-300 hover:text-white"
             >
               <IoMdCloseCircle />
             </button>
 
             <img
               src={selected.screenshot}
-              alt={selected.title}
-              className="rounded-xl w-full h-60 object-cover mb-4"
+              className="w-full rounded-lg"
+              alt="preview"
             />
 
-            <h3 className="text-2xl font-bold mb-2">{selected.title}</h3>
-            <p className="text-gray-300 mb-4">{selected.desc}</p>
-
-            <div className="flex flex-wrap gap-2 mb-4">
-              {selected.tech.map((tech, i) => (
-                <span
-                  key={i}
-                  className="text-xs px-3 py-1 bg-white/10 border border-white/20 rounded-full"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-
-            <div className="flex justify-between text-purple-400 text-sm">
-              <a href={selected.Livelink} target="_blank" className="underline">
-                Live ↗
-              </a>
-              <a
-                href={selected.Githublink}
-                target="_blank"
-                className="underline"
-              >
-                GitHub ↗
-              </a>
-            </div>
+            <h2 className="text-xl mt-3 font-semibold">{selected.title}</h2>
           </div>
         </div>
       )}

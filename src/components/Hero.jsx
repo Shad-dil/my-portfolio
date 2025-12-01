@@ -77,7 +77,7 @@ const Hero = () => (
   //     <path d="M0,160L80,176C160,192,320,224,480,218.7C640,213,800,171,960,170.7C1120,171,1280,213,1360,234.7L1440,256L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z" />
   //   </svg>
   // </section>
-  <section className="pt-28 pb-20 text-center bg-[#0f0f13] text-white">
+  <section className="pt-28 pb-20 text-center bg-[#18012f] text-white">
     <div className="max-w-3xl mx-auto">
       <motion.h1
         initial={{ opacity: 0, y: 8 }}
