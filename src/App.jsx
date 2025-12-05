@@ -10,6 +10,10 @@ import { ScrollFadeIn } from "./components/ScrollFadeIn";
 import Skills from "./components/Skills";
 import "./index.css";
 import WebVitals from "./components/Report";
+import ReactGA from "react-ga4";
+
+ReactGA.initialize("G-NG7W0480HZ");
+ReactGA.send("pageview");
 
 function App() {
   useEffect(() => {
