@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title1": "I build scalable frontend",
+    "title2": "systems",
+    "title3": "for complex, production-grade products.",
+    "sub": "Frontend engineer with 3+ years building enterprise banking platforms for UAE & KSA clients at Infosys.",
+    "example": "Example system I worked on — a role-based frontend architecture \n handling real-time data, permissions, and performance constraints.",
+    "cta1": "View Case Studies",
+    "cta2": "Resume"
+  },
+  "about": {
+    "heading": "About — How I approach frontend engineering",
+    "body": "I'm a frontend engineer focused on building predictable, scalable user interfaces for data-intensive products. Over the past 3+ years, I've worked on enterprise banking applications for GCC clients (UAE, KSA) at Infosys.",
+    "open_to": "Open to roles in UAE / KSA"
+  },
+  "skills": {
+    "heading": "Skills"
+  },
+  "projects": {
+    "heading": "Explore Architecture",
+    "live": "Live Demo",
+    "github": "GitHub",
+    "case_study": "View Case Study"
+  },
+  "experience": {
+    "heading": "Experience"
+  },
+  "contact": {
+    "heading": "Contact",
+    "sub": "Open to full-time frontend roles across UAE, KSA, and India.",
+    "location": "Current location: India",
+    "open_to": "Open to roles in: India · UAE · KSA",
+    "role_type": "Role type: Full-time",
+    "name": "Your Name",
+    "email": "Your Email",
+    "message": "Your Message",
+    "send": "Send Message"
+  }
+}
