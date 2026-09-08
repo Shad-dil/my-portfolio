@@ -7,10 +7,9 @@ import { useTransition } from "react";
 const LANGS = [
   { code: "en", label: "EN", flag: "🇬🇧" },
   { code: "ar", label: "عربي", flag: "🇦🇪" },
-  { code: "hi", label: "हिन्दी", flag: "🇮🇳" },
 ];
 
-const LOCALE_PREFIXES = ["en", "ar", "hi"];
+const LOCALE_PREFIXES = ["en", "ar"];
 
 export default function LanguageSwitcher() {
   const locale = useLocale();

@@ -2,7 +2,7 @@ import createMiddleware from "next-intl/middleware";
 import { NextRequest } from "next/server";
 
 const handleI18nRouting = createMiddleware({
-  locales: ["en", "ar", "hi"],
+  locales: ["en", "ar"],
   defaultLocale: "en",
   localePrefix: "always",
 });

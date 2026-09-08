@@ -6,6 +6,7 @@ import { IoMdCloseCircle } from "react-icons/io";
 import PulseBoardCaseStudy from "./PulseboardCaseStudy";
 import CaseStudyModal from "./CaseStudyModal";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 // ----------------------
 // Project Data
@@ -131,7 +132,7 @@ export default function Projects() {
                 onClick={() => openModal(featured)}
                 className="relative bg-[#1a1a1d] p-3 rounded-2xl shadow-2xl border border-white/10 w-full max-w-xl cursor-pointer hover:shadow-violet-500/20 transition"
               >
-                <img
+                <Image
                   src={featured.screenshot}
                   alt={featured.title}
                   className="rounded-xl"

@@ -2,32 +2,35 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
-import { Cairo, Geist, Geist_Mono } from "next/font/google";
-import "../globals.css";
+import { Fraunces, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+import "../globals.css"; // make sure globals-portfolio-tokens.css is merged into this file
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const fraunces = Fraunces({
   subsets: ["latin"],
+  variable: "--font-serif",
+  weight: ["400", "500", "600"],
 });
-const cairo = Cairo({
-  variable: "--font-cairo",
-  subsets: ["arabic"],
+
+const plexSans = IBM_Plex_Sans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  weight: ["400", "500", "600"],
 });
-const locales = ["en", "ar", "hi"];
+
+const plexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  weight: ["400", "500"],
+});
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://dilshad.online"),
-  title: "Dilshad | Frontend Developer — React, Next.js, GCC",
+  title: "Dilshad — Frontend Developer, Enterprise Banking UI",
   description:
-    "3+ years building enterprise banking UIs for UAE & KSA clients at Infosys.",
-  openGraph: {
-    title: "Dilshad — Frontend Developer",
-    description: "GCC-experienced frontend engineer. Open to UAE / KSA roles.",
-    images: ["/og-image.png"],
-    url: "https://dilshad.online",
-  },
+    "Frontend developer with 4 years building enterprise banking interfaces for UAE and KSA clients at Infosys.",
 };
+
+// Adjust this list to match the locales you already support in your i18n config.
+const RTL_LOCALES = new Set(["ar"]);
 
 export default async function LocaleLayout({
   children,
@@ -37,23 +40,22 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-
-  if (!locales.includes(locale)) notFound();
+  if (locale !== "en" && locale !== "ar") {
+    notFound();
+  }
 
   const messages = await getMessages();
-  const isRTL = locale === "ar";
+  const dir = RTL_LOCALES.has(locale) ? "rtl" : "ltr";
 
   return (
-    <html
-      lang={locale}
-      dir={isRTL ? "rtl" : "ltr"}
-      className={`${geistSans.variable} ${geistMono.variable} ${cairo.variable} antialiased`}
-    >
-      <body>
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          {children}
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <NextIntlClientProvider messages={messages}>
+      <div
+        lang={locale}
+        dir={dir}
+        className={`${fraunces.variable} ${plexSans.variable} ${plexMono.variable} bg-[var(--paper)] text-[var(--ink)] font-[family-name:var(--font-sans)] antialiased`}
+      >
+        {children}
+      </div>
+    </NextIntlClientProvider>
   );
 }

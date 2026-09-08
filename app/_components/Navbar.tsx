@@ -41,7 +41,7 @@ export default function Navbar() {
         className="text-[#A26BFF] text-xl font-bold tracking-wide hover:opacity-90 transition"
         style={{ fontFamily: "monospace" }}
       >
-        &lt; Dilshad.dev /&gt;
+        &lt; Dilshad<span className="text-[#A8752E]">.dev</span> /&gt;
       </Link>
 
       {/* DESKTOP NAV */}

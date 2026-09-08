@@ -1,37 +1,25 @@
-"use client";
+import Nav from "@/components/portfolio/Nav";
+import Hero from "@/components/portfolio/Hero";
+import About from "@/components/portfolio/About";
+import Work from "@/components/portfolio/Work";
+import Performance from "@/components/portfolio/Performance";
+import Experience from "@/components/portfolio/Experience";
+import Contact from "@/components/portfolio/Contact";
+import Footer from "@/components/portfolio/Footer";
 
-import About from "../_components/About";
-import ContactSection from "../_components/Contact";
-import Experience from "../_components/Experience";
-import Hero from "../_components/Hero";
-import Navbar from "../_components/Navbar";
-import Projects from "../_components/Projects";
-
-import { ScrollFadeIn } from "../_components/ScrollFadeIn";
-import SkillsSection from "../_components/Skills";
-import WebVitals from "../_components/WebVitals";
-
-export default function Home() {
+export default function Page() {
   return (
-    <main>
-      <Navbar />
-      <Hero />
-      <ScrollFadeIn>
+    <>
+      <Nav />
+      <main>
+        <Hero />
         <About />
-      </ScrollFadeIn>
-      <SkillsSection />
-      <section data-aos="fade-up">
-        <Projects />
-      </section>
-      <WebVitals />
-      <Experience />
-      <ContactSection />
-
-      {/* <About /> */}
-      {/* <Skills /> */}
-      {/* <Projects /> */}
-      {/* <Experience /> */}
-      {/* <Contact /> */}
-    </main>
+        <Work />
+        <Performance />
+        <Experience />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   );
 }

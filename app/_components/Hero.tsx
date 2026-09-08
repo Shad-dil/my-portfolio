@@ -42,7 +42,7 @@ export default function Hero() {
         >
           <a
             href="#projects"
-            className="px-6 py-3 rounded-full bg-[#A26BFF] text-black font-medium shadow-md hover:bg-transparent hover:text-white hover:border-white hover:border transition flex items-center justify-center gap-2"
+            className="px-6 py-3 rounded-full bg-[#161D2B] text-black font-medium shadow-md hover:bg-transparent hover:text-white hover:border-white hover:border transition flex items-center justify-center gap-2"
           >
             {t("cta1")} <BsEye className="text-lg" />
           </a>
@@ -76,7 +76,7 @@ export default function Hero() {
 
       {/* BACKGROUND GLOW */}
       <div className="absolute inset-0 -z-10 flex justify-center">
-        <div className="w-162.5 h-162.5 bg-[#A26BFF]/20 blur-[180px] opacity-25" />
+        <div className="h-[650px] w-[650px] bg-[#A26BFF]/20 opacity-25 blur-[180px]" />
       </div>
     </section>
   );

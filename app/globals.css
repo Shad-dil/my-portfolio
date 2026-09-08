@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "./globals-portfolio-tokens.css";
+
 [dir="rtl"] {
   font-family: var(--font-cairo), sans-serif;
 }

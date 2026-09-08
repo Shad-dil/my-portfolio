@@ -1,45 +1,203 @@
 {
   "nav": {
     "about": "About",
-    "projects": "Projects",
+    "work": "Work",
     "experience": "Experience",
-    "contact": "Contact"
+    "contact": "Contact",
+    "resume": "Resume"
   },
   "hero": {
-    "title1": "I build scalable frontend",
-    "title2": "systems",
-    "title3": "for complex, production-grade products.",
-    "sub": "Frontend engineer with 3+ years building enterprise banking platforms for UAE & KSA clients at Infosys.",
-    "example": "Example system I worked on — a role-based frontend architecture \n handling real-time data, permissions, and performance constraints.",
-    "cta1": "View Case Studies",
-    "cta2": "Resume"
+    "title": "I build frontend for complex, data-heavy products under real-world constraints.",
+    "subtitle": "4 years shipping React and Next.js interfaces where role permissions, real-time data, and performance on inconsistent connections aren't edge cases — they're the whole job. Most recently: enterprise banking platforms for UAE and KSA at Infosys.",
+    "ctaPrimary": "View case study",
+    "ctaSecondary": "Resume"
+  },
+  "strip": {
+    "experienceLabel": "Experience",
+    "experienceValue": "4 years",
+    "focusLabel": "Focus",
+    "focusValue": "Banking & fintech UI",
+    "marketsLabel": "Markets",
+    "marketsValue": "UAE, KSA, India",
+    "statusLabel": "Status",
+    "statusValue": "Open to relocate"
   },
   "about": {
-    "heading": "About — How I approach frontend engineering",
-    "body": "I'm a frontend engineer focused on building predictable, scalable user interfaces for data-intensive products. Over the past 3+ years, I've worked on enterprise banking applications for GCC clients (UAE, KSA) at Infosys.",
-    "open_to": "Open to roles in UAE / KSA"
+    "heading": "About",
+    "paragraph1": "I'm a frontend developer with 4 years at Infosys, mostly on enterprise banking portals for UAE and KSA clients. Most of my work sits at the intersection of three constraints that don't show up in tutorials: strict role-based access control, data that has to stay correct under real-time updates, and performance budgets for users on inconsistent mobile connections.",
+    "paragraph2": "I've spent the last two years moving from building components to owning a full frontend module — from architecture decisions down to the caching strategy that keeps it fast.",
+    "paragraph3": "Based in India. Open to full-time roles in UAE, KSA, and India.",
+    "badge": "Open to full-time roles"
   },
   "skills": {
-    "heading": "Skills"
+    "items": [
+      {
+        "name": "JavaScript (ES6+)",
+        "desc": "Daily driver for 4 years — comfortable in React codebases and vanilla DOM work when a library isn't warranted."
+      },
+      {
+        "name": "React",
+        "desc": "Component architecture, render optimization, and state colocation for screens with high-frequency data updates."
+      },
+      {
+        "name": "Next.js",
+        "desc": "SSR, SSG, and RSC tradeoffs in production — knowing when each one actually helps versus adds complexity."
+      },
+      {
+        "name": "TypeScript",
+        "desc": "Used daily for 2+ years. Strict mode, discriminated unions for API response states."
+      },
+      {
+        "name": "Redux Toolkit & React Query",
+        "desc": "Predictable global state versus server-state caching — and knowing which one a given piece of data actually needs."
+      },
+      {
+        "name": "Testing",
+        "desc": "Regression coverage on components that change frequently, not chasing 100% coverage for its own sake."
+      }
+    ]
   },
-  "projects": {
-    "heading": "Explore Architecture",
-    "live": "Live Demo",
-    "github": "GitHub",
-    "case_study": "View Case Study"
+  "work": {
+    "heading": "Selected work",
+    "jobpilot": {
+      "kicker": "Live product",
+      "title": "JobPilot — AI resume analysis & optimization platform",
+      "problem": "A full-stack platform that evaluates a resume against a specific job description and generates a structured ATS-style analysis: missing keywords, strengths, weaknesses, and concrete recommendations — built and shipped end to end, not a prototype.",
+      "decisions": [
+        {
+          "title": "Structured output validation with Zod before anything reaches the UI",
+          "desc": "LLM output is parsed against a strict schema before rendering, so a malformed or incomplete AI response never breaks the analysis screen — the UI only ever sees data it can trust."
+        },
+        {
+          "title": "Streamed AI responses via the Vercel AI SDK",
+          "desc": "Resume analysis takes a few seconds end to end, so results stream in as they're generated instead of the user staring at a blank spinner."
+        },
+        {
+          "title": "Secure auth with persistent analysis history",
+          "desc": "Built on NextAuth/Better Auth so users can log in and come back to past resume analyses instead of losing results after a single session."
+        },
+        {
+          "title": "MySQL and Prisma for the data layer",
+          "desc": "Resumes, job descriptions, and generated analyses are all persisted relationally, which made building the history feature straightforward rather than bolted on."
+        }
+      ],
+      "liveDemo": "Live demo",
+      "url": "jobpilot.dilshad.online",
+      "whatNextLabel": "What I'd change next:",
+      "whatNextBody": "Add caching for repeat resume/job-description pairs so re-running an analysis doesn't hit the LLM API again for the same input."
+    },
+    "pulseboard": {
+      "kicker": "Case study",
+      "title": "PulseBoard — role-based frontend architecture",
+      "problem": "A personal project built to explore a pattern I use at work but can't show publicly: a dashboard where different roles see different data and actions, real-time KPIs stay correct, and table and chart views hold up under large paginated datasets — without the codebase turning into scattered permission checks as features get added.",
+      "decisions": [
+        {
+          "title": "RBAC at three levels — route, component, and action",
+          "desc": "Permissions are checked at the point of use instead of a single top-level route guard, which prevents a hidden button from staying reachable via a stale cached page."
+        },
+        {
+          "title": "Server state separated from UI state, via React Query",
+          "desc": "KPI and user data is cached and revalidated independently from UI-only state like open modals and filters, avoiding the classic conflict of using one store for both."
+        },
+        {
+          "title": "Schema-driven validation with Zod",
+          "desc": "Form validation lives in one schema the UI can share, so refactoring a form doesn't silently break validation elsewhere."
+        },
+        {
+          "title": "Paginated tables and charts",
+          "desc": "Designed to handle large datasets without loading everything client-side, keeping interaction smooth as data volume grows."
+        }
+      ],
+      "liveDemo": "Live demo",
+      "github": "GitHub",
+      "whatNextLabel": "What I'd change next:",
+      "whatNextBody": "Add optimistic updates for the KPI actions instead of waiting on a full refetch — right now a slow connection makes the dashboard feel less responsive than it should."
+    },
+    "other": {
+      "heading": "Other projects",
+      "klimate": {
+        "name": "Klimate",
+        "desc": "Weather app with live OpenWeather API, search, and theme switching."
+      },
+      "instituteOS": {
+        "name": "Institute OS",
+        "desc": "Management platform for institutes — handles exams, student records, and fee tracking in one place."
+      },
+      "eventDrop": {
+        "name": "EventDrop",
+        "desc": "Create an event and let guests upload and view shared photos with likes, via QR code entry and real-time updates with Socket.io."
+      },
+      "githubLink": "GitHub"
+    }
+  },
+  "performance": {
+    "heading": "Performance work",
+    "project": "Before/after results from the {project} revamp (see Experience below) — taken from 70s-range Lighthouse scores to 90+ on both mobile and desktop.",
+    "projectName": "Digital Banking Portal",
+    "rows": [
+      {
+        "desc": "Fixed layout shift",
+        "detail": "Set explicit width/height attributes and reworked image loading order.",
+        "value": "CLS ↓"
+      },
+      {
+        "desc": "Faster largest contentful paint",
+        "detail": "Compressed and converted hero assets to WebP, served via next/image.",
+        "value": "LCP ↓"
+      },
+      {
+        "desc": "Smaller JS bundle",
+        "detail": "Code-splitting, dynamic imports, and removing unused dependencies.",
+        "value": "~40% smaller"
+      },
+      {
+        "desc": "Less main-thread blocking",
+        "detail": "Deferred non-critical scripts and removed render-blocking resources.",
+        "value": "FID ↓"
+      },
+      {
+        "desc": "Better caching strategy",
+        "detail": "ISR, cache headers, and Next.js prefetching on high-traffic routes.",
+        "value": "Lighthouse 90+"
+      }
+    ]
   },
   "experience": {
-    "heading": "Experience"
+    "heading": "Experience",
+    "role": "Frontend Developer, Infosys",
+    "meta": "Jan 2022 — Present · Banking & financial services accounts (UAE, KSA)",
+    "phases": [
+      {
+        "year": "2022–2024",
+        "title": "Building the foundation",
+        "items": [
+          "Built and maintained React/Next.js components for customer and admin banking portals serving UAE and KSA markets.",
+          "Contributed to a shared component library used across multiple product modules.",
+          "Started owning performance: identified render bottlenecks and reduced unnecessary re-renders on data-heavy dashboard views."
+        ]
+      },
+      {
+        "year": "2024–Present",
+        "title": "Taking ownership",
+        "items": [
+          "Led the frontend UI revamp for the digital banking customer and admin portals — from architecture decisions to implementation.",
+          "Owned the performance budget: reduced LCP and CLS issues, taking Lighthouse scores to 90+.",
+          "Introduced schema-driven form validation to cut down a recurring class of production bugs from malformed input.",
+          "Worked directly with backend, QA, and design in Agile sprints to ship feature rollouts without breaking existing banking workflows."
+        ]
+      }
+    ],
+    "leadNoteLabel": "On scope:",
+    "leadNoteBody": "I was the primary frontend owner on the digital banking portal module — architecture, performance, and delivery — working alongside backend, QA, and design, without formal direct reports."
   },
   "contact": {
     "heading": "Contact",
-    "sub": "Open to full-time frontend roles across UAE, KSA, and India.",
-    "location": "Current location: India",
-    "open_to": "Open to roles in: India · UAE · KSA",
-    "role_type": "Role type: Full-time",
-    "name": "Your Name",
-    "email": "Your Email",
-    "message": "Your Message",
-    "send": "Send Message"
-  }
+    "line": "Open to full-time frontend roles across UAE, KSA, and India.",
+    "status": "Currently in India — ready to relocate",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "resume": "Resume"
+  },
+  "footer": "© 2026 Dilshad — built with Next.js and next-intl"
 }
