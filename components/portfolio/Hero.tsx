@@ -17,10 +17,7 @@ export default async function Hero() {
         <h1 className=" max-w-[14ch] font-[family-name:var(--font-serif)] text-[clamp(2rem,4.6vw,3.2rem)] font-medium leading-[1.15]">
           {t("title")}
         </h1>
-        <p
-          className=" mt-5 max-w-[56ch] text-[1.08rem] text-[var(--muted)]"
-          style={{ animationDelay: "0.12s" }}
-        >
+        <p className=" mt-5 max-w-[56ch] text-[1.08rem] text-[var(--muted)]">
           {t("subtitle")}
         </p>
         <div
