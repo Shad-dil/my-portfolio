@@ -60,6 +60,7 @@ export default async function Work() {
                 alt="JobPilot resume analysis interface"
                 width={900}
                 height={600}
+                sizes="(min-width: 768px) 500px, calc(100vw - 48px)"
                 className="h-auto w-full rounded-sm border border-[var(--line)] object-cover"
               />
               <Image
@@ -67,6 +68,7 @@ export default async function Work() {
                 alt="JobPilot job matching interface"
                 width={900}
                 height={600}
+                sizes="(min-width: 768px) 500px, calc(100vw - 48px)"
                 className="h-auto w-full rounded-sm border border-[var(--line)] object-cover"
               />
             </div>
@@ -123,10 +125,13 @@ export default async function Work() {
         {/* --- PulseBoard (secondary case study) --- */}
         <div className="grid gap-8 md:grid-cols-2 md:items-start md:gap-12">
           <div>
-            <img
-              src="https://dilshad.online/dashboard_preview.png"
+            <Image
+              src="/dashboard_preview.png"
               alt="PulseBoard dashboard interface showing KPI charts and data tables"
               className="w-full rounded border border-[var(--line)]"
+              width={900}
+              height={600}
+              sizes="(min-width: 768px) 500px, calc(100vw - 48px)"
             />
           </div>
 
@@ -190,11 +195,14 @@ export default async function Work() {
 
           <div className="grid gap-px border border-[var(--line)] bg-[var(--line)] sm:grid-cols-2">
             <div className="flex items-center gap-4 bg-[var(--paper)] p-5">
-              <img
+              {/* <Image
                 src="https://dilshad.online/klimate.png"
                 alt="Klimate weather app interface"
                 className="h-16 w-16 shrink-0 rounded object-cover"
-              />
+              /> */}
+              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded bg-[var(--ledger)] font-[family-name:var(--font-serif)] text-xl text-[var(--paper)]">
+                KL
+              </div>
               <div>
                 <h4 className="mb-1 font-[family-name:var(--font-serif)] text-[1.05rem] font-medium">
                   {other("klimate.name")}

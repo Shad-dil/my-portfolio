@@ -14,24 +14,22 @@ export default async function Hero() {
   return (
     <div id="top">
       <div className="mx-auto max-w-[1040px] px-6 pt-16">
-        <h1
-          className="animate-rise max-w-[14ch] font-[family-name:var(--font-serif)] text-[clamp(2rem,4.6vw,3.2rem)] font-medium leading-[1.15]"
-        >
+        <h1 className=" max-w-[14ch] font-[family-name:var(--font-serif)] text-[clamp(2rem,4.6vw,3.2rem)] font-medium leading-[1.15]">
           {t("title")}
         </h1>
         <p
-          className="animate-rise mt-5 max-w-[56ch] text-[1.08rem] text-[var(--muted)]"
+          className=" mt-5 max-w-[56ch] text-[1.08rem] text-[var(--muted)]"
           style={{ animationDelay: "0.12s" }}
         >
           {t("subtitle")}
         </p>
         <div
-          className="animate-rise mt-8 flex flex-wrap gap-3.5"
+          className=" mt-8 flex flex-wrap gap-3.5"
           style={{ animationDelay: "0.22s" }}
         >
           <a
             href="#work"
-            className="rounded-sm bg-[var(--ink)] px-5 py-3 text-sm font-medium text-[var(--paper)] transition-colors hover:bg-[var(--brass-dim)]"
+            className="rounded-sm bg-var(--ink) px-5 py-3 text-sm font-medium text-var(--paper) transition-colors hover:bg-[var(--brass-dim)]"
           >
             {t("ctaPrimary")}
           </a>

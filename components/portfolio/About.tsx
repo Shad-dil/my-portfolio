@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import Image from "next/image";
 
 type SkillItem = { name: string; desc: string };
 
@@ -8,10 +9,7 @@ export default async function About() {
   const skills = tSkills.raw("items") as SkillItem[];
 
   return (
-    <section
-      id="about"
-      className="border-b border-[var(--line)] py-22 px-6"
-    >
+    <section id="about" className="border-b border-[var(--line)] py-22 px-6">
       <div className="mx-auto max-w-[1040px]">
         <div className="mb-10 flex items-baseline justify-between gap-4">
           <h2 className="font-[family-name:var(--font-serif)] text-[clamp(1.5rem,3vw,2rem)] font-medium">
@@ -24,10 +22,12 @@ export default async function About() {
 
         <div className="grid gap-10 md:grid-cols-[200px_1fr]">
           <div>
-            <img
-              src="https://dilshad.online/_next/image?url=%2FProfile.jpg&w=256&q=75"
+            <Image
+              src="/Profile.jpg"
               alt="Portrait of Dilshad"
-              className="h-[140px] w-[140px] rounded object-cover grayscale-[45%]"
+              className="h-35  rounded object-cover grayscale-45"
+              width={135}
+              height={135}
             />
             <div className="mt-2 flex items-center gap-2 font-[family-name:var(--font-mono)] text-[0.82rem] text-[var(--ledger)]">
               <span className="inline-block h-[7px] w-[7px] rounded-full bg-[var(--ledger)]" />
